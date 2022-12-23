@@ -1,0 +1,25 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WebApplication1.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>刷题网站</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <center>
+        <form id="form1" runat="server">
+            <div style="width=100px">
+                <div style="height=110px;background-color=#C0C0C0">
+                    <header>
+                        <asp:Image ID="Image1" runat="server" Height="85px" ImageUrl="~/images/header.png" Width="1000px" />
+                    </header>
+                </div>
+            </div>
+        </form>
+    </center>
+</body>
+</html>

@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="CB20130106胡嘉希.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <center>
+        <form id="form1" runat="server">
+            <div style="width: 1000px;">
+
+                <div style="height: 110px; background-color: #bb88f3;" id="header">
+
+                    <asp:Image ID="Image1" runat="server" Height="90px" ImageUrl="~/images/nav.jpg" Width="1000px" />
+
+                </div>
+
+                <div style="height: 600px">
+
+                    <div style="width: 200px; height: 600px; float: left; background-color: #808080;">
+                        
+                        <br />
+                        <br />
+                        <asp:Button runat="server" Text="登录" OnClick="Login_Click"></asp:Button>
+                        <asp:Button runat="server" Text="注册" OnClick="Enroll_Click"></asp:Button>
+                        <br />
+                        <br />
+                        <br />
+                        <%--  导航栏--%>
+
+                        <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1" BorderColor="White">
+                        </asp:TreeView>
+                        <asp:SiteMapDataSource runat="server" ID="SiteMapDataSource1"></asp:SiteMapDataSource>
+
+                    </div>
+
+                    <div style="width: 800px; height: 600px; float: right; background-color: #b6ff00;">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+
+
+                <div style="height: 120px; background-color: #ffd800;">
+                    <br />
+                    <footer>
+                        <address>
+                            招生热线：（0769）86211555 86211666 86211999 86211801 86211802 传真：86211818 E-MAIL:<br />
+                            广东科技学院版权所有 Copyright ©2010-2012 地址:广东省东莞市南城区西湖路99号 邮编:523083<br />
+                            计算机系办公室电话:0769-86211875 粤ICP备13033090号 (最佳分辨率:1920*1080)<br />
+                        </address>
+
+                    </footer>
+                </div>
+
+            </div>
+        </form>
+    </center>
+</body>
+</html>

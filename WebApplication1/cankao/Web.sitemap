@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="index.aspx" title="首页"  description="">
+    <siteMapNode url="doExercise.aspx" title="刷题页面"  description="" />
+    <siteMapNode url="" title="用户界面"  description="">
+      <siteMapNode url="user.aspx" title="个人资料"  description="" />
+      <siteMapNode url="alterUser.aspx" title="修改资料"  description="" />
+      <siteMapNode url="login.aspx" title=""  description="" />
+      <siteMapNode url="register.aspx" title=""  description="" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>
