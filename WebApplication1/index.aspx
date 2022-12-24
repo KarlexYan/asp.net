@@ -3,6 +3,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>欢迎来到刷题网站</h1><br />
+    <asp:Label ID="Label1" runat="server" Text=""></asp:Label><br /><br />
+    <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+    <br /><br />
     <asp:Button ID="Button1" runat="server" Text="登录" OnClick="Button1_Click"/>
     &nbsp;&nbsp;
     <asp:Button ID="Button2" runat="server" Text="注册" OnClick="Button2_Click" />

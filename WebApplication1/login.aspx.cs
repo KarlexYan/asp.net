@@ -31,7 +31,11 @@ namespace WebApplication1
                 string msg = "";
                 UserManage umObj = new UserManage();
                 if(umObj.LoginSys(TextBox1.Text.Trim(), TextBox2.Text.Trim(), out msg)){
-                    Response.Redirect("~/farm.aspx");
+                    Session["name"] = TextBox1.Text;
+                    Session["pwd"] = TextBox2.Text;
+                    Session["stuID"] = msg;
+                    Session["role"] = "学生";
+                    Response.Redirect("~/index.aspx");
                 }
                 else
                 {
