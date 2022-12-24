@@ -13,5 +13,36 @@ namespace WebApplication1
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            if(TextBox1.Text.Trim().Length == 0)
+            {
+                Response.Write("<script>alert('用户名不能为空！')</script>");
+                return;
+            }
+            else if (TextBox2.Text.Trim() == string.Empty)
+            {
+                Response.Write("<script>alert('密码不能为空！')</script>");
+                return;
+            }
+            else
+            {
+                string msg = "";
+                UserManage umObj = new UserManage();
+                if(umObj.LoginSys(TextBox1.Text.Trim(), TextBox2.Text.Trim(), out msg)){
+                    Response.Redirect("~/farm.aspx");
+                }
+                else
+                {
+                    Response.Write("<script>alert('" + msg+"')</script>");
+                }
+            }
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/index.aspx");
+        }
     }
 }
