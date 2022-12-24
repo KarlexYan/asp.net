@@ -18,16 +18,16 @@
             </div>
 
             <div style="height: 600px">
-                <div style="width:200px; height:600px; float:left; background-color: #CC99FF;">
+                <div style="width:200px; height:600px; float:left; background-color: #ecf0f1;">
                 <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="False" />
     <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1"></asp:TreeView>    
                 </div>
-                <div style="width:800px; height:600px; float:right; background-color: #66CCFF;">
+                <div style="width:800px; height:600px; float:right; background-color: #bdc3c7;">
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                     </asp:ContentPlaceHolder>
                 </div>
             </div>
-            <div style="height:120px; background-color: #CCFF66;">
+            <div style="height:120px; background-color: #7f8c8d;">
                 <footer>
                     <address>
                         招生热线：（0769）86211555 86211666 86211999 86211801 86211802 传真：86211818 E-MAIL:<br />

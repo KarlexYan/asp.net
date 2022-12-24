@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
   <siteMapNode>
-    <siteMapNode url="" title="首页"  description="">
-      <siteMapNode url="" title="刷题"  description="" />
-      <siteMapNode url="" title="排行榜"  description="" />
+    <siteMapNode url="~/index.aspx" title="首页"  description="" />
+    <siteMapNode url="" title="功能"  description="">
+      <siteMapNode url="~/farm.aspx" title="开始刷题"  description="" />
+      <siteMapNode url="~/top.aspx" title="排行榜"  description="" />
     </siteMapNode>
     <siteMapNode url="" title="用户管理"  description="">
-      <siteMapNode url="" title="个人资料"  description="" />
-      <siteMapNode url="" title="修改资料"  description="" />
+      <siteMapNode url="~/homepage.aspx" title="个人资料"  description="" />
+      <siteMapNode url="~/edit.aspx" title="修改资料"  description="" />
     </siteMapNode>
   </siteMapNode>
 </siteMap>
