@@ -25,36 +25,10 @@ namespace WebApplication1
             }
             else
             {
-                showQuetions();
+                
             }
         }
 
-        public void showQuetions() {
-            string sqlstr = "select b.content,count(a.stuID) as rs from tb_testRecord a,tb_questions b "
-                 + " where a.QID=b.QID and a.IsCorrect=0 group by b.content order by rs desc";
-            MySqlConnection con = new MySqlConnection();
-            con.ConnectionString = ConfigurationManager.AppSettings["RemoteConnectionString"];
-            DataSet ds = new DataSet();
-
-            try
-            {
-                con.Open();
-                MySqlDataAdapter mda = new MySqlDataAdapter(sqlstr, con);
-                mda.Fill(ds, "record");
-                GridView1.DataSource = ds.Tables["record"];
-                GridView1.DataBind();
-            }
-            catch (Exception ex)
-            {
-                string errmsg = ex.Message;
-            }
-            finally
-            {
-                if (con.State == ConnectionState.Open)
-                    con.Close();
-
-                con.Dispose();
-            }
-        }
+        
     }
 }

@@ -5,6 +5,7 @@
     <siteMapNode url="" title="功能"  description="">
       <siteMapNode url="~/farm.aspx" title="开始刷题"  description="" />
       <siteMapNode url="~/top.aspx" title="排行榜"  description="" />
+      <siteMapNode url="~/allPaper.aspx" title="试题列表"  description="" />
     </siteMapNode>
     <siteMapNode url="" title="用户管理"  description="">
       <siteMapNode url="~/homepage.aspx" title="个人资料"  description="" />

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace WebApplication1
 {
-    public partial class top : System.Web.UI.Page
+    public partial class allPaper : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,13 +25,13 @@ namespace WebApplication1
             }
             else
             {
-                showQuetions();
+                showList();
             }
         }
-        public void showQuetions()
+
+        public void showList()
         {
-            string sqlstr = "select b.content,count(a.stuID) as rs from tb_testRecord a,tb_questions b "
-                 + " where a.QID=b.QID and a.IsCorrect=0 group by b.content order by rs desc";
+            string sqlstr = "select papername,SID,schoolname,testyear from tb_paper";
             //string sqlstr = "select content from tb_questions";
             MySqlConnection con = new MySqlConnection();
             con.ConnectionString = ConfigurationManager.AppSettings["RemoteConnectionString"];
@@ -41,8 +41,8 @@ namespace WebApplication1
             {
                 con.Open();
                 MySqlDataAdapter mda = new MySqlDataAdapter(sqlstr, con);
-                mda.Fill(ds, "ErrQuestions");
-                GridView1.DataSource = ds.Tables["ErrQuestions"];
+                mda.Fill(ds, "PaperList");
+                GridView1.DataSource = ds.Tables["PaperList"];
                 GridView1.DataBind();
             }
             catch (Exception e)
@@ -56,6 +56,16 @@ namespace WebApplication1
 
                 con.Dispose();
             }
+        }
+
+        protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
