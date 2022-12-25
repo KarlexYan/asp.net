@@ -34,7 +34,7 @@ namespace WebApplication1
                     Session["name"] = TextBox1.Text;
                     Session["pwd"] = TextBox2.Text;
                     Session["stuID"] = msg;
-                    Session["role"] = "学生";
+                    Session["role"] = "用户";
                     Response.Redirect("~/index.aspx");
                 }
                 else

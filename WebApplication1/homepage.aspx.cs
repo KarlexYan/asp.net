@@ -17,7 +17,7 @@ namespace WebApplication1
                 DialogResult dr = MessageBox.Show("请先登录！");
                 if(dr == DialogResult.OK)
                 {
-                    Server.Transfer("login.aspx");
+                    Response.Redirect("~/login.aspx");
                 }
             }
             else{

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace WebApplication1
 {
@@ -11,7 +12,18 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["stuID"] == null)
+            {
+                DialogResult dr = MessageBox.Show("请先登录！");
+                if (dr == DialogResult.OK)
+                {
+                    Response.Redirect("~/login.aspx");
+                }
+            }
+            else
+            {
 
+            }
         }
     }
 }
