@@ -15,6 +15,45 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        //public void showList()
+        //{
+        //    string sqlstr = "select papername,SID,schoolname,testyear from tb_paper";
+        //    //string sqlstr = "select content from tb_questions";
+        //    MySqlConnection con = new MySqlConnection();
+        //    con.ConnectionString = ConfigurationManager.AppSettings["RemoteConnectionString"];
+        //    DataSet ds = new DataSet();
+
+        //    try
+        //    {
+        //        con.Open();
+        //        MySqlDataAdapter mda = new MySqlDataAdapter(sqlstr, con);
+        //        mda.Fill(ds, "PaperList");
+        //        GridView1.DataSource = ds.Tables["PaperList"];
+        //        GridView1.DataBind();
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        string errmsg = e.Message;
+        //    }
+        //    finally
+        //    {
+        //        if (con.State == ConnectionState.Open)
+        //            con.Close();
+
+        //        con.Dispose();
+        //    }
+        //}
+
+        protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
             if (Session["stuID"] == null)
             {
                 DialogResult dr = MessageBox.Show("请先登录！");
@@ -25,47 +64,10 @@ namespace WebApplication1
             }
             else
             {
-                showList();
+                
             }
         }
 
-        public void showList()
-        {
-            string sqlstr = "select papername,SID,schoolname,testyear from tb_paper";
-            //string sqlstr = "select content from tb_questions";
-            MySqlConnection con = new MySqlConnection();
-            con.ConnectionString = ConfigurationManager.AppSettings["RemoteConnectionString"];
-            DataSet ds = new DataSet();
 
-            try
-            {
-                con.Open();
-                MySqlDataAdapter mda = new MySqlDataAdapter(sqlstr, con);
-                mda.Fill(ds, "PaperList");
-                GridView1.DataSource = ds.Tables["PaperList"];
-                GridView1.DataBind();
-            }
-            catch (Exception e)
-            {
-                string errmsg = e.Message;
-            }
-            finally
-            {
-                if (con.State == ConnectionState.Open)
-                    con.Close();
-
-                con.Dispose();
-            }
-        }
-
-        protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
-        {
-
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

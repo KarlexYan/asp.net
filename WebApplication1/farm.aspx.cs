@@ -28,7 +28,54 @@ namespace WebApplication1
                 
             }
         }
+        private void QueryQuestions()
+        {
+            string sqlstr = "select a.QID,a.content,a.qoptions,a.score,'' as myanswer from tb_questions a,tb_paper b " +
+                "where a.paperID=b.paperID ";
+            if(TextBox1.Text.Trim() != "")
+            {
+                sqlstr = sqlstr + " and b.schoolname like '%"+TextBox1.Text+"%' ";
+            }
+            if(DropDownList1.Text.Trim() != "")
+            {
+                sqlstr = sqlstr + " and b.testyear='" + TextBox2.Text + "'";
+            }
+            if(TextBox2.Text.Trim() != "")
+            {
+                sqlstr = sqlstr + " and b.SID = " + DropDownList1.SelectedValue;
+            }
+            MySqlConnection con = new MySqlConnection();
+            con.ConnectionString = ConfigurationManager.AppSettings["RemoteConnectionString"];
+            MySqlCommand cmd = new MySqlCommand();
+            DataSet ds = new DataSet();
+            try
+            {
+                con.Open();
+                cmd.Connection = con;
+                cmd.CommandText = sqlstr;
+                MySqlDataAdapter mda = new MySqlDataAdapter(cmd);
+                mda.Fill(ds,"question");
+                GridView1.DataSource = ds.Tables["question"];
+                GridView1.DataBind();
+            }
+            catch(Exception e)
+            {
+                string errstr = e.Message;
+            }
+            finally
+            {
+                if(con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+                con.Dispose();
+                cmd.Dispose();
+            }
+        }
 
-        
+        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridView1.PageIndex = e.NewPageIndex;
+        }
     }
 }
