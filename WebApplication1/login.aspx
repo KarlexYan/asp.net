@@ -2,10 +2,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <h1>登录页</h1>
     <center>
-        <asp:Label ID="Label1" runat="server" Text="用户名"></asp:Label>
+        <asp:Label ID="Label1" runat="server" Text="用户名："></asp:Label>
         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox><br /><br />
-        <asp:Label ID="Label2" runat="server" Text="密码"></asp:Label>
+        <asp:Label ID="Label2" runat="server" Text="密  码："></asp:Label>
         <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
         <br /><br /><br />
         <asp:Button ID="Button1" runat="server" Text="登录" OnClick="Button1_Click" />
