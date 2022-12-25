@@ -26,6 +26,7 @@ namespace WebApplication1
             else
             {
                 
+                //QuerySubject();
             }
         }
         private void QueryQuestions()
@@ -38,11 +39,12 @@ namespace WebApplication1
             }
             if(DropDownList1.Text.Trim() != "")
             {
-                sqlstr = sqlstr + " and b.testyear='" + TextBox2.Text + "'";
+
+                sqlstr = sqlstr + " and b.SID = " + DropDownList1.SelectedValue;
             }
             if(TextBox2.Text.Trim() != "")
             {
-                sqlstr = sqlstr + " and b.SID = " + DropDownList1.SelectedValue;
+                sqlstr = sqlstr + " and b.testyear='" + TextBox2.Text + "'";
             }
             MySqlConnection con = new MySqlConnection();
             con.ConnectionString = ConfigurationManager.AppSettings["RemoteConnectionString"];
@@ -73,9 +75,50 @@ namespace WebApplication1
             }
         }
 
+        //private void QuerySubject()
+        //{
+        //    string sqlstr = "select sname,SID from tb_subject";
+            
+        //    MySqlConnection con = new MySqlConnection();
+        //    con.ConnectionString = ConfigurationManager.AppSettings["RemoteConnectionString"];
+        //    MySqlCommand cmd = new MySqlCommand();
+        //    DataSet ds = new DataSet();
+        //    try
+        //    {
+        //        con.Open();
+        //        cmd.Connection = con;
+        //        cmd.CommandText = sqlstr;
+        //        MySqlDataAdapter mda = new MySqlDataAdapter(cmd);
+        //        mda.Fill(ds, "subject");
+        //        DropDownList1.DataSource = ds.Tables["subject"];
+        //        DropDownList1.DataTextField = "sname";
+        //        DropDownList1.DataValueField = "SID";
+        //        DropDownList1.DataBind();
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        string errstr = e.Message;
+        //    }
+        //    finally
+        //    {
+        //        if (con.State == ConnectionState.Open)
+        //        {
+        //            con.Close();
+        //        }
+        //        con.Dispose();
+        //        cmd.Dispose();
+        //    }
+        //}
+
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             GridView1.PageIndex = e.NewPageIndex;
+            QueryQuestions();
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            QueryQuestions();
         }
     }
 }

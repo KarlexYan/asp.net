@@ -15,59 +15,47 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            initList();
+        }
+    
+        private void initList()
+        {
+            string sqlstr = "select a.papername,b.sname,a.schoolname,a.testyear from tb_paper a ,tb_subject b" +
+                " where a.SID = b.SID ";
             
-        }
-
-        //public void showList()
-        //{
-        //    string sqlstr = "select papername,SID,schoolname,testyear from tb_paper";
-        //    //string sqlstr = "select content from tb_questions";
-        //    MySqlConnection con = new MySqlConnection();
-        //    con.ConnectionString = ConfigurationManager.AppSettings["RemoteConnectionString"];
-        //    DataSet ds = new DataSet();
-
-        //    try
-        //    {
-        //        con.Open();
-        //        MySqlDataAdapter mda = new MySqlDataAdapter(sqlstr, con);
-        //        mda.Fill(ds, "PaperList");
-        //        GridView1.DataSource = ds.Tables["PaperList"];
-        //        GridView1.DataBind();
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        string errmsg = e.Message;
-        //    }
-        //    finally
-        //    {
-        //        if (con.State == ConnectionState.Open)
-        //            con.Close();
-
-        //        con.Dispose();
-        //    }
-        //}
-
-        protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
-        {
-
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            if (Session["stuID"] == null)
+            MySqlConnection con = new MySqlConnection();
+            con.ConnectionString = ConfigurationManager.AppSettings["RemoteConnectionString"];
+            MySqlCommand cmd = new MySqlCommand();
+            DataSet ds = new DataSet();
+            try
             {
-                DialogResult dr = MessageBox.Show("请先登录！");
-                if (dr == DialogResult.OK)
+                con.Open();
+                cmd.Connection = con;
+                cmd.CommandText = sqlstr;
+                MySqlDataAdapter mda = new MySqlDataAdapter(cmd);
+                mda.Fill(ds, "list");
+                GridView1.DataSource = ds.Tables["list"];
+                GridView1.DataBind();
+            }
+            catch (Exception e)
+            {
+                string errstr = e.Message;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
                 {
-                    Response.Redirect("~/login.aspx");
+                    con.Close();
                 }
-            }
-            else
-            {
-                
+                con.Dispose();
+                cmd.Dispose();
             }
         }
 
-
+        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridView1.PageIndex = e.NewPageIndex;
+            initList();
+        }
     }
 }
