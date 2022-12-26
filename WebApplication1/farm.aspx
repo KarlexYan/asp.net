@@ -23,24 +23,25 @@
         &nbsp;
         <asp:Button ID="Button1" runat="server"  Text="搜索" Width="49px" OnClick="Button1_Click"/>
     </p>
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True"  PageSize="5" Width="70%" AutoGenerateColumns="False" OnPageIndexChanging="GridView1_PageIndexChanging" CellPadding="4" ForeColor="#333333" GridLines="None">
-        <AlternatingRowStyle BackColor="White" />
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True"  PageSize="5"  AutoGenerateColumns="False" OnPageIndexChanging="GridView1_PageIndexChanging" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating">
         <Columns>
-            <asp:BoundField DataField="QID" HeaderText="试题编号" ReadOnly="True" />
-            <asp:BoundField DataField="content" HeaderText="题目" ReadOnly="True" />
+            <asp:BoundField DataField="QID" HeaderText="试题编号" ReadOnly="True" ItemStyle-Width="70px" >
+<ItemStyle Width="70px"></ItemStyle>
+            </asp:BoundField>
+            <asp:BoundField DataField="content" HeaderText="题目" ReadOnly="True" ItemStyle-Width="250px" >
+<ItemStyle Width="250px"></ItemStyle>
+            </asp:BoundField>
             <asp:BoundField DataField="qoptions" HeaderText="选项" ReadOnly="True" />
-            <asp:BoundField DataField="score" HeaderText="分值" ReadOnly="True" />
-            <asp:BoundField DataField="myanswer" HeaderText="我的答案" ReadOnly="True" />
+            <asp:BoundField DataField="score" HeaderText="分值" ReadOnly="True" ItemStyle-Width="20px">
+<ItemStyle Width="20px"></ItemStyle>
+            </asp:BoundField>
+            <asp:BoundField DataField="myanswer" HeaderText="我的答案" ReadOnly="false" ItemStyle-Width="50px">
+            <ControlStyle Width="40px" />
+<ItemStyle Width="50px"></ItemStyle>
+            </asp:BoundField>
+            <asp:CommandField ButtonType="Button" EditText="开始作答" HeaderText="操作" InsertVisible="False" ShowEditButton="True" UpdateText="完成答题" ShowHeader="True" ItemStyle-Width="120px" >
+<ItemStyle Width="120px"></ItemStyle>
+            </asp:CommandField>
         </Columns>
-        <EditRowStyle BackColor="#2461BF" />
-        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-        <RowStyle BackColor="#EFF3FB" />
-        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-        <SortedAscendingCellStyle BackColor="#F5F7FB" />
-        <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-        <SortedDescendingCellStyle BackColor="#E9EBEF" />
-        <SortedDescendingHeaderStyle BackColor="#4870BE" />
     </asp:GridView>
 </asp:Content>

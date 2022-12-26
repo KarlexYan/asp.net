@@ -13,6 +13,7 @@ namespace WebApplication1
 {
     public partial class farm : System.Web.UI.Page
     {
+        private string stuID = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["stuID"] == null)
@@ -25,7 +26,7 @@ namespace WebApplication1
             }
             else
             {
-                
+                stuID = Session["stuID"].ToString();
                 //QuerySubject();
             }
         }
@@ -118,6 +119,54 @@ namespace WebApplication1
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            QueryQuestions();
+        }
+
+        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            GridView1.EditIndex = e.NewEditIndex;
+            QueryQuestions();
+        }
+
+        protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            string qid = GridView1.Rows[e.RowIndex].Cells[0].Text;
+            string answer = ((System.Web.UI.WebControls.TextBox)(GridView1.Rows[e.RowIndex].Cells[4].Controls[0])).Text;
+            string sqlstr = "insert into tb_testRecord(stuID,QID,myScore,testtime,IsCorrect,myAnswer) "
+                            + " values(" + stuID + "," + qid + ",0,now(),0,'"+answer+"')";
+            //DialogResult dr = MessageBox.Show(sqlstr);
+            MySqlConnection con = new MySqlConnection();
+            con.ConnectionString = ConfigurationManager.AppSettings["RemoteConnectionString"];
+            MySqlCommand cmd = new MySqlCommand();
+            try
+            {
+                con.Open();
+                cmd.CommandText = sqlstr;
+                cmd.Connection = con;
+                if ((answer != "") && cmd.ExecuteNonQuery() > 0)
+                    {
+                        Response.Write("<script>alert('答题成功！')</script>");
+                    }
+
+            }catch(Exception ex)
+            {
+                string errstr = ex.Message;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                    con.Close();
+                con.Dispose();
+                cmd.Dispose();
+
+                GridView1.EditIndex = -1;
+                QueryQuestions();
+            }
+        }
+
+        protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            GridView1.EditIndex = -1;
             QueryQuestions();
         }
     }
