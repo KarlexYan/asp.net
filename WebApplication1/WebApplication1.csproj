@@ -107,6 +107,7 @@
   <ItemGroup>
     <Content Include="allPaper.aspx" />
     <Content Include="edit.aspx" />
+    <Content Include="testRecord.aspx" />
     <Content Include="farm.aspx" />
     <Content Include="homepage.aspx" />
     <Content Include="images\header.png" />
@@ -115,7 +116,6 @@
     <Content Include="register.aspx" />
     <Content Include="top.aspx" />
     <Content Include="Web.config" />
-    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="allPaper.aspx.cs">
@@ -131,6 +131,13 @@
     </Compile>
     <Compile Include="edit.aspx.designer.cs">
       <DependentUpon>edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="testRecord.aspx.cs">
+      <DependentUpon>testRecord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="testRecord.aspx.designer.cs">
+      <DependentUpon>testRecord.aspx</DependentUpon>
     </Compile>
     <Compile Include="farm.aspx.cs">
       <DependentUpon>farm.aspx</DependentUpon>
@@ -183,13 +190,6 @@
       <DependentUpon>top.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserManage.cs" />
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

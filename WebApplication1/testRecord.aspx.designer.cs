@@ -11,7 +11,7 @@ namespace WebApplication1
 {
 
 
-    public partial class register
+    public partial class testRecord
     {
 
         /// <summary>
@@ -42,6 +42,24 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
+        /// DropDownList1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+
+        /// <summary>
+        /// Label3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label3;
+
+        /// <summary>
         /// TextBox2 控件。
         /// </summary>
         /// <remarks>
@@ -60,12 +78,12 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.Button Button1;
 
         /// <summary>
-        /// Button2 控件。
+        /// GridView1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
     }
 }

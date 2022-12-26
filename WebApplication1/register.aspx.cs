@@ -12,18 +12,7 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["stuID"] == null)
-            {
-                DialogResult dr = MessageBox.Show("请先登录！");
-                if (dr == DialogResult.OK)
-                {
-                    Response.Redirect("~/login.aspx");
-                }
-            }
-            else
-            {
-
-            }
+            
         }
     }
 }

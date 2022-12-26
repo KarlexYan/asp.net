@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="farm.aspx.cs" Inherits="WebApplication1.farm" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="testRecord.aspx.cs" Inherits="WebApplication1.testRecord" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1>刷题页</h1>
+    <h1>刷题记录</h1>
     <p>
         <asp:Label ID="Label1" runat="server" Text="学校："></asp:Label>
         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
@@ -23,24 +23,23 @@
         &nbsp;
         <asp:Button ID="Button1" runat="server"  Text="搜索" Width="49px" OnClick="Button1_Click"/>
     </p>
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True"  PageSize="5"  AutoGenerateColumns="False" OnPageIndexChanging="GridView1_PageIndexChanging" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating">
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True"  PageSize="5"  AutoGenerateColumns="False" OnPageIndexChanging="GridView1_PageIndexChanging" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" Width="792px">
         <Columns>
-            <asp:BoundField DataField="QID" HeaderText="试题编号" ReadOnly="True" ItemStyle-Width="70px" >
-<ItemStyle Width="70px"></ItemStyle>
+            <asp:BoundField DataField="QID" HeaderText="试题编号" ReadOnly="True">
             </asp:BoundField>
-            <asp:BoundField DataField="content" HeaderText="题目" ReadOnly="True" ItemStyle-Width="250px" >
-<ItemStyle Width="250px"></ItemStyle>
+            <asp:BoundField DataField="content" HeaderText="题目" ReadOnly="True">
             </asp:BoundField>
             <asp:BoundField DataField="qoptions" HeaderText="选项" ReadOnly="True" />
-            <asp:BoundField DataField="score" HeaderText="分值" ReadOnly="True" ItemStyle-Width="20px">
-<ItemStyle Width="20px"></ItemStyle>
+            <asp:BoundField DataField="score" HeaderText="分值" ReadOnly="True" >
             </asp:BoundField>
-            <asp:BoundField DataField="myanswer" HeaderText="我的答案" ReadOnly="false" ItemStyle-Width="50px">
-            <ControlStyle Width="40px" />
-<ItemStyle Width="50px"></ItemStyle>
+            <asp:BoundField DataField="myanswer" HeaderText="我的答案" ReadOnly="false">
+            <ControlStyle Width="30px" />
             </asp:BoundField>
-            <asp:CommandField ButtonType="Button" EditText="开始作答" HeaderText="操作" InsertVisible="False" ShowEditButton="True" UpdateText="完成答题" ShowHeader="True" ItemStyle-Width="120px" >
-<ItemStyle Width="120px"></ItemStyle>
+            <asp:BoundField DataField="myScore" HeaderText="我的得分" ReadOnly="True">
+            </asp:BoundField>
+            <asp:BoundField DataField="testtime" HeaderText="答题时间" ReadOnly="True">
+            </asp:BoundField>
+            <asp:CommandField ButtonType="Button" EditText="重新作答" HeaderText="操作" InsertVisible="False" ShowEditButton="True" UpdateText="完成" ShowHeader="True" ItemStyle-Width="100px">
             </asp:CommandField>
         </Columns>
     </asp:GridView>
