@@ -27,7 +27,6 @@ namespace WebApplication1
             MySqlConnection con = new MySqlConnection();
             con.ConnectionString = ConfigurationManager.AppSettings["RemoteConnectionString"];
             MySqlCommand cmd = new MySqlCommand();
-            DialogResult dr =  MessageBox.Show(sqlstr);
             try
             {
                 con.Open();
@@ -35,7 +34,7 @@ namespace WebApplication1
                 cmd.Connection = con;
                 if((TextBox1.Text != "") && cmd.ExecuteNonQuery() > 0)
                 {
-                    DialogResult dr2 = MessageBox.Show("注册成功！");
+                    DialogResult dr = MessageBox.Show("注册成功！");
                     if (dr == DialogResult.OK)
                     {
                         Response.Redirect("~/index.aspx");
