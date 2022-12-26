@@ -7,7 +7,7 @@
         <tr>
             <td style="width:50%">用户名：</td>
             <td>
-                <asp:Label ID="Label1" runat="server" Text="" ></asp:Label></td>
+                <asp:Label ID="Label1" runat="server" Text=""></asp:Label></td>
         </tr>
         <tr>
             <td style="width:50%">密码：</td>

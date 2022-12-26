@@ -90,11 +90,11 @@ namespace WebApplication1
         {
             string sqlstr = "update tb_student set pwd ='"+TextBox2.Text.Trim()+"' ,stuName ='"+TextBox3.Text.Trim() + "' ," +
                 " Sex ='"+TextBox4.Text.Trim() + "' ,shoolName = '"+TextBox5.Text.Trim() + "',birthday ='"+TextBox6.Text.Trim() + "' ," +
-                " Tel = '"+TextBox7.Text.Trim() + "',email = '"+TextBox8.Text.Trim() + "' where userName = '"+username+"'";
+                " Tel = '"+TextBox7.Text.Trim() + "',email = '"+TextBox8.Text.Trim() + "' where userName = '"+Label1.Text+"'";
             MySqlConnection con = new MySqlConnection();
             con.ConnectionString = ConfigurationManager.AppSettings["RemoteConnectionString"];
             MySqlCommand cmd = new MySqlCommand();
-            DialogResult dr = MessageBox.Show(sqlstr);
+            //DialogResult dr = MessageBox.Show(sqlstr);
             try
             {
                 con.Open();
