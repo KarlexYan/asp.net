@@ -10,7 +10,6 @@
     </siteMapNode>
     <siteMapNode url="" title="用户管理"  description="">
       <siteMapNode url="~/homepage.aspx" title="个人资料"  description="" />
-      <siteMapNode url="~/edit.aspx" title="修改资料"  description="" />
     </siteMapNode>
   </siteMapNode>
 </siteMap>

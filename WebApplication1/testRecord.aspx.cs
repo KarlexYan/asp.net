@@ -36,7 +36,7 @@ namespace WebApplication1
                 "where a.paperID=b.paperID and c.QID=a.QID and stuID= " + stuID;
             if(TextBox1.Text.Trim() != "")
             {
-                sqlstr = sqlstr + " and b.schoolname like '%"+TextBox1.Text+"%' ";
+                sqlstr = sqlstr + " and b.shoolname like '%"+TextBox1.Text+"%' ";
             }
             if(DropDownList1.Text.Trim() != "")
             {

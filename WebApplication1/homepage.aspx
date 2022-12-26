@@ -6,7 +6,8 @@
     <table>
         <tr>
             <td style="width:50%">用户名：</td>
-            <td><asp:TextBox ID="TextBox1" runat="server" ReadOnly="true"></asp:TextBox></td>
+            <td>
+                <asp:Label ID="Label1" runat="server" Text="" ></asp:Label></td>
         </tr>
         <tr>
             <td style="width:50%">密码：</td>
@@ -44,8 +45,7 @@
             <td>
                 <br />
                 <br />
-                <asp:Button ID="btnModify" Width="80px" runat="server" Text="修改" Height="20px" OnClick="btnModify_Click" />&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="btnCancel" Width="80px" runat="server" Text="取消" Height="20px" Visible="False" OnClick="btnCancel_Click" /></td>
+                <asp:Button ID="btnModify" Width="80px" runat="server" Text="修改" Height="20px" OnClick="btnModify_Click" />&nbsp;&nbsp;<asp:Button ID="btnCancel" Width="80px" runat="server" Text="取消" Height="20px" Visible="False" OnClick="btnCancel_Click" /></td>
         </tr>
     </table>
 </asp:Content>

@@ -106,7 +106,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="allPaper.aspx" />
-    <Content Include="edit.aspx" />
     <Content Include="testRecord.aspx" />
     <Content Include="farm.aspx" />
     <Content Include="homepage.aspx" />
@@ -124,13 +123,6 @@
     </Compile>
     <Compile Include="allPaper.aspx.designer.cs">
       <DependentUpon>allPaper.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="edit.aspx.cs">
-      <DependentUpon>edit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="edit.aspx.designer.cs">
-      <DependentUpon>edit.aspx</DependentUpon>
     </Compile>
     <Compile Include="testRecord.aspx.cs">
       <DependentUpon>testRecord.aspx</DependentUpon>
